@@ -1,0 +1,360 @@
+﻿<Window
+    x:Class="DemoUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DemoUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="600"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="ButtonStyleMouseOver" TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#000000" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="Black"
+                            BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5,5,5,5" />
+                </Style>
+            </Style.Resources>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="Background" Value="White" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Border Background="#020202" CornerRadius="10" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="6*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="2"
+                        Background="Transparent"
+                        Margin="5"
+                        BorderThickness="0">
+                    <Image Source="Images/setting.png"/>
+                </Button>
+                <Button Grid.Column="3"
+                        Margin="5"
+                        Background="Transparent"
+                        BorderThickness="0">
+                    <Image Source="Images/minimize.png"/>
+                </Button>
+                <Button Grid.Column="4"
+                        Margin="5"
+                        Background="Transparent"
+                        BorderThickness="0">
+                    <Image Source="Images/switch-off.png"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1" Background="#141414">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="6*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Margin="30,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="Comic Sans MS"
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text="Bonjour Antoine" />
+                    <Button Grid.Column="1"
+                            Background="Transparent"
+                            Margin="5"
+                            BorderThickness="0">
+                        <Image Source="Images/go-out.png"/>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1.5*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel
+                            Grid.Row="0"
+                            Margin="5"
+                            VerticalAlignment="Center">
+                            <TextBlock
+                                HorizontalAlignment="Left"
+                                FontSize="20"
+                                Foreground="#b2b2b2"
+                                Text="Vos applications" />
+                            <Border
+                                Width="50"
+                                Height="2"
+                                HorizontalAlignment="Left"
+                                Background="#e4af2b" />
+                            <DockPanel Margin="10" VerticalAlignment="Center">
+                                <Border
+                                    Margin="30,10,30,10"
+                                    Background="#f6b511"
+                                    CornerRadius="10">
+                                    <StackPanel Margin="10">
+                                        <Image
+                                            Width="113"
+                                            Height="74"
+                                            Source="Images/honeycomb.png"
+                                            Stretch="Uniform" />
+                                        <Button
+                                            Width="80"
+                                            Height="40"
+                                            Margin="10"
+                                            Content="Lancer"
+                                            Style="{StaticResource ButtonStyleMouseOver}" />
+                                    </StackPanel>
+                                </Border>
+                            </DockPanel>
+                            <RadioButton Content="Lancer cette application par defaut" Foreground="#b5b5b5" />
+                        </StackPanel>
+                        <StackPanel
+                            Grid.Row="1"
+                            Margin="5"
+                            VerticalAlignment="Center">
+
+                            <DockPanel Margin="10" VerticalAlignment="Center">
+                                <Border
+                                    Margin="30,10,30,10"
+                                    Background="#f6b511"
+                                    CornerRadius="10">
+                                    <StackPanel>
+                                        <Image
+                                            Width="113"
+                                            Height="74"
+                                            Margin="0,10,0,0"
+                                            Source="Images/invoice.png"
+                                            Stretch="Uniform" />
+                                        <Button
+                                            Width="80"
+                                            Height="40"
+                                            Margin="10"
+                                            Content="Lancer"
+                                            Style="{StaticResource ButtonStyleMouseOver}" />
+                                    </StackPanel>
+                                </Border>
+                            </DockPanel>
+                            <RadioButton Content="Lancer cette application par defaut" Foreground="#b5b5b5" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.4*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" VerticalAlignment="Center">
+                            <TextBlock
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="20"
+                                Foreground="#b2b2b2"
+                                Text="LES NEWS DE X" />
+                            <Border
+                                Width="50"
+                                Height="2"
+                                HorizontalAlignment="Left"
+                                Background="#e4af2b" />
+                        </StackPanel>
+                        <DockPanel Grid.Row="1">
+                            <Border
+                                Margin="30,10,30,10"
+                                Background="#020202"
+                                CornerRadius="10">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image
+                                        Grid.Column="0"
+                                        Margin="20"
+                                        Source="Images/pc.png" />
+                                    <StackPanel
+                                        Grid.Column="1"
+                                        Margin="5"
+                                        VerticalAlignment="Center">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="16"
+                                            Foreground="#f1b92c"
+                                            Text="UN SITE WEB CELA VOUS DIT?" />
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="12"
+                                            Foreground="White"
+                                            Text="Saviez-vous que nous pouvons créer votre site web? Qu'il soit vitrine ou e-commerce"
+                                            TextWrapping="Wrap" />
+                                        <Button
+                                            HorizontalAlignment="Left"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Content="En savoir plus"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="10"
+                                            Foreground="#f1b92c" />
+                                        <Border
+                                            Width="40"
+                                            Height="1"
+                                            Margin="3,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            Background="#e4af2b" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                        </DockPanel>
+                        <DockPanel Grid.Row="2">
+                            <Border
+                                Margin="30,10,30,10"
+                                Background="#020202"
+                                CornerRadius="10">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image
+                                        Grid.Column="0"
+                                        Margin="20"
+                                        Source="Images/beehiveC.png" />
+                                    <StackPanel
+                                        Grid.Column="1"
+                                        Margin="5"
+                                        VerticalAlignment="Center">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="16"
+                                            Foreground="#f1b92c"
+                                            Text="123 984 ABEILLE DE SAUVEES" />
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="12"
+                                            Foreground="White"
+                                            Text="Grâce à vous, nous avons pu sauver des abeilles grâce à la préservation de leur ruche."
+                                            TextWrapping="Wrap" />
+                                        <Button
+                                            HorizontalAlignment="Left"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Content="En savoir plus"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="10"
+                                            Foreground="#f1b92c" />
+                                        <Border
+                                            Width="40"
+                                            Height="1"
+                                            Margin="3,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            Background="#e4af2b" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                        </DockPanel>
+                        <DockPanel Grid.Row="3">
+                            <Border
+                                Margin="30,10,30,10"
+                                Background="#020202"
+                                CornerRadius="10">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image
+                                        Grid.Column="0"
+                                        Margin="20"
+                                        Source="Images/HC.png" />
+                                    <StackPanel
+                                        Grid.Column="1"
+                                        Margin="5"
+                                        VerticalAlignment="Center">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="16"
+                                            Foreground="#f1b92c"
+                                            Text="RECOMMANDEZ ET GAGNER" />
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="12"
+                                            Foreground="White"
+                                            Text="Recommandez BeeHive et bénéficier d'avantges excelusifs"
+                                            TextWrapping="Wrap" />
+                                        <Button
+                                            HorizontalAlignment="Left"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Content="En savoir plus"
+                                            FontFamily="Comic Sans MS"
+                                            FontSize="10"
+                                            Foreground="#f1b92c" />
+                                        <Border
+                                            Width="40"
+                                            Height="1"
+                                            Margin="3,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            Background="#e4af2b" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                        </DockPanel>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

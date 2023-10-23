@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\beehiveC.png" />
+    <None Remove="Images\go-out.png" />
+    <None Remove="Images\HC.png" />
+    <None Remove="Images\honeycomb.png" />
+    <None Remove="Images\invoice.png" />
+    <None Remove="Images\minimize.png" />
+    <None Remove="Images\pc.png" />
+    <None Remove="Images\setting.png" />
+    <None Remove="Images\switch-off.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\beehiveC.png" />
+    <Resource Include="Images\go-out.png" />
+    <Resource Include="Images\HC.png" />
+    <Resource Include="Images\honeycomb.png" />
+    <Resource Include="Images\invoice.png" />
+    <Resource Include="Images\minimize.png" />
+    <Resource Include="Images\pc.png" />
+    <Resource Include="Images\setting.png" />
+    <Resource Include="Images\switch-off.png" />
+  </ItemGroup>
+
+</Project>
